@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "hemovision-app",
+    "slug": "hemovision-app",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
