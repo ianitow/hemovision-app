@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "strict": false,
+    "allowJs": true,
+    "noEmit": true,
+    "baseUrl": "./",
+    "paths": { "@components/*": ["src/components"] }
+  },
+  "extends": "expo/tsconfig.base"
+}
