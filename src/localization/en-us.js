@@ -1,3 +1,1 @@
-
-
-export const enUS = {}
+export const enUS = {};
