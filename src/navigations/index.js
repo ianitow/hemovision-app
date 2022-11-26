@@ -1,1 +1,2 @@
-export {AuthNavigator} from './AuthNavigator'
+export { PublicNavigator } from "./PublicNavigator";
+export { AuthNavigator } from "./AuthNavigator";
