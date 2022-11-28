@@ -1,10 +1,10 @@
-import { View, Text } from "react-native";
-import React from "react";
+import { View, Text } from 'react-native';
+import React from 'react';
 
 export function Classify() {
-    return (
-        <View>
-            <Text>Classify</Text>
-        </View>
-    );
+  return (
+    <View>
+      <Text>Classify</Text>
+    </View>
+  );
 }

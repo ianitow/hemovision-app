@@ -1,10 +1,10 @@
-import { View, Text } from "react-native";
-import React from "react";
+import { View, Text } from 'react-native';
+import React from 'react';
 
 export function Collections() {
-    return (
-        <View>
-            <Text>Collections</Text>
-        </View>
-    );
+  return (
+    <View>
+      <Text>Collections</Text>
+    </View>
+  );
 }
