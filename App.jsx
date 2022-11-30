@@ -1,9 +1,7 @@
 import { NavigationContainer } from '@react-navigation/native';
 import React from 'react';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
-
 import { PublicNavigator, AuthNavigator } from 'src/navigations';
-
 export default function App() {
   const state = {
     public: () => <PublicNavigator />,

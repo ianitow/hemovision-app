@@ -1,16 +1,20 @@
 import React from 'react';
 
 import { Feed, Classify, Collections, Notifications, Profile } from 'src/screens';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+import {} from '@react-navigation/elements';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { colors } from 'src/theme/colors';
 import Constants from 'expo-constants';
-const Tab = createBottomTabNavigator();
+import { Text, View } from 'react-native';
+const Tab = createMaterialTopTabNavigator();
 
 export function AuthNavigator() {
   return (
     <>
       <Tab.Navigator
+        tabBarPosition={'bottom'}
         screenOptions={({ route }) => ({
           tabBarIcon: ({ focused, color, size }) => {
             let iconName;
@@ -39,21 +43,31 @@ export function AuthNavigator() {
 
             // You can return any component that you like here!
             return (
-              <Ionicons
-                name={properties[route.name].iconName}
-                size={28}
-                color={properties[route.name].color}
-              />
+              <View
+                className=" self-center w-9 h-9 flex flex-row items-center justify-center"
+                style={{ marginTop: -8 }}
+              >
+                <Ionicons
+                  name={properties[route.name].iconName}
+                  size={28}
+                  color={properties[route.name].color}
+                />
+              </View>
             );
+          },
+          tabBarStyle: {
+            paddingVertical: 2,
+          },
+
+          tabBarPressColor: colors.primary,
+          tabBarShowLabel: false,
+          tabBarIndicatorStyle: {
+            borderBottomWidth: 2,
+            borderBottomColor: colors.primary,
           },
 
           tabBarActiveTintColor: colors.primary,
           tabBarInactiveTintColor: colors.text,
-          headerShown: false,
-
-          headerStyle: {
-            backgroundColor: '#f4511e',
-          },
         })}
       >
         <Tab.Screen name="Feed" component={Feed} />
