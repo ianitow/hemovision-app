@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { View, Image, StatusBar, Dimensions, Text } from 'react-native';
 import Swiper from 'react-native-swiper';
+import { PostImage } from './PostImage';
+import { PostSurvey } from './PostSurvey';
 const { width, height } = Dimensions.get('window');
 
 const styles = {
@@ -29,9 +31,9 @@ const styles = {
   },
 };
 
-export function Collections() {
+export function PostContent({ post, showOverlay }) {
   return (
-    <View className="border bg-red-200" style={styles.container}>
+    <View className="h-80  rounded  " style={styles.container}>
       <Swiper
         style={styles.wrapper}
         dot={
@@ -60,15 +62,8 @@ export function Collections() {
         }
         loop={false}
       >
-        <View style={styles.slide}>
-          <Text>Slide 01</Text>
-        </View>
-        <View style={styles.slide}>
-          <Text>Slide 02</Text>
-        </View>
-        <View style={styles.slide}>
-          <Text>Slide 03</Text>
-        </View>
+        <PostImage overlay={showOverlay} />
+        <PostSurvey></PostSurvey>
       </Swiper>
     </View>
   );

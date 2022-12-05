@@ -1,17 +1,39 @@
-import { View, Text } from 'react-native';
+import { View, Text, ActivityIndicator } from 'react-native';
 import React from 'react';
 import { colors } from 'src/theme/colors';
 import { Image } from 'react-native';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import SwipeLeft from 'src/assets/swipe_left.svg';
 
-export function PostImage() {
+export function PostImage({ overlay = false }) {
   return (
-    <View
-      className="flex  bg-red-200 h-80 border rounded"
-      style={{ borderColor: colors.boxBackground }}
-    >
+    <View className="flex  h-80 border relative" style={{ borderColor: colors.boxBackground }}>
+      {overlay && (
+        <View
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundColor: 'rgba(0,0,0,0.35)',
+            zIndex: 2,
+          }}
+          className="flex items-center justify-center rounded"
+        >
+          <View className=" ">
+            <SwipeLeft className="self-center text-white w-32 h-32 " fill="white" />
+          </View>
+          <Text className="text-center text-white text-xl">Arraste para a esquerda</Text>
+          <Text className="text-center text-white font-light mt-2">
+            Para acessar as classificações de outros usuários
+          </Text>
+        </View>
+      )}
       <Image
-        className="h-full w-full"
+        className="h-full w-full rounded"
         source={{ uri: 'https://o.quizlet.com/pJTq0KYYdDMC20Bsu9Qrgg_b.jpg' }}
+        PlaceholderContent={<ActivityIndicator />}
       ></Image>
     </View>
   );

@@ -1,13 +1,13 @@
 import { View, Text, TouchableOpacity } from 'react-native';
 import React from 'react';
 import { colors } from 'src/theme/colors';
-import { Avatar } from 'react-native-elements';
-import { Ionicons } from '@expo/vector-icons';
-import { PostImage } from './PostImage';
 import { PostFooter } from './PostFooter';
 import { PostFooterBlock } from './PostFooterBlock';
-export function PostContainer() {
-  var oi = 'oi';
+import { PostContent } from './PostContent';
+import { PostHeader } from './PostHeader';
+export function PostContainer({ post }) {
+  const { user } = post;
+
   return (
     <View
       className="mx-4 my-4 mb-2  rounded   "
@@ -26,71 +26,20 @@ export function PostContainer() {
         elevation: 1,
       }}
     >
-      <View className="flex flex-row px-4 mt-4">
-        <Avatar
-          size="medium"
-          rounded
-          source={{
-            uri: 'https://randomuser.me/api/portraits/men/76.jpg',
-          }}
-        />
-        <View className="ml-2 flex-1">
-          <View className="flex-row justify-between ">
-            <View>
-              <Text className="font-bold " style={{ lineHeight: 16 }}>
-                Érica Silva
-              </Text>
-              <Text
-                className="font-light"
-                style={{
-                  marginTop: -2,
-                  fontSize: 10,
-                  lineHeight: 14,
-                }}
-              >
-                Biomédico na UFG
-              </Text>
-              <View className="flex-row gap-x-1">
-                <Ionicons name="ios-time-outline" size={12} />
-                <Text
-                  className="font-light"
-                  style={{
-                    marginTop: -2,
-                    fontSize: 10,
-                    lineHeight: 14,
-                  }}
-                >
-                  há 2 minutos
-                </Text>
-              </View>
-            </View>
-            <View className="self-center w-28 ">
-              <TouchableOpacity
-                className="justify-center items-center rounded-md  bg-transparent  px-4  text-sm  shadow-sm   w-full h-8 font-bold"
-                style={{
-                  borderWidth: 1,
-                  borderColor: colors.primary,
-                }}
-              >
-                <Text className=" text-xs uppercase" style={{ color: colors.primary }}>
-                  Seguir
-                </Text>
-              </TouchableOpacity>
-            </View>
-          </View>
+      <PostHeader user={user} post={post} />
+      <View className="mt-2 ">
+        <View className="px-4">
+          <Text className="text-xs font-light mb-2">{post.description}</Text>
+
+          <PostContent post={post} showOverlay={true} />
+          <PostFooter
+            viewedBy={post.viewed_by}
+            totalVisits={post.total_visits}
+            totalComments={post.total_comments}
+          />
         </View>
-      </View>
-      <View className="mt-2">
-        <View className=" px-4">
-          <Text className="text-xs font-light">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-          </Text>
-          <PostImage />
-          <PostFooter />
-        </View>
-        <View className="mt-2">
-          <PostFooterBlock />
-        </View>
+
+        <PostFooterBlock className="pt-2" />
       </View>
     </View>
   );
