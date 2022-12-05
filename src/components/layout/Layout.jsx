@@ -3,10 +3,9 @@ import React from 'react';
 import { colors } from 'src/theme/colors';
 import { Header } from '../header/Header';
 
-export function Layout({ children }) {
+export function Layout({ style = [], children }) {
   return (
-    <View className="flex flex-1 " style={{ backgroundColor: '#f3f3f3', color: colors.text }}>
-      <Header />
+    <View className="flex flex-1 " style={[{ backgroundColor: '#f3f3f3', color: colors.text }]}>
       <ScrollView>{children}</ScrollView>
     </View>
   );

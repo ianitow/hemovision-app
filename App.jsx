@@ -4,6 +4,7 @@ import * as ScreenOrientation from 'expo-screen-orientation';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { PublicNavigator, AuthNavigator } from 'src/navigations';
 import { lockPortraitMode } from 'src/utils/screen';
+import { Header } from 'src/components/header/Header';
 export default function App() {
   useEffect(() => {
     lockPortraitMode();
@@ -16,7 +17,10 @@ export default function App() {
   return (
     <SafeAreaProvider>
       <NavigationContainer>
-        <SafeAreaView style={{ flex: 1 }}>{state['logged']()}</SafeAreaView>
+        <SafeAreaView style={{ flex: 1 }}>
+          <Header />
+          {state['logged']()}
+        </SafeAreaView>
       </NavigationContainer>
     </SafeAreaProvider>
   );

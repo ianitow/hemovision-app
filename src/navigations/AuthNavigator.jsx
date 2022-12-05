@@ -14,6 +14,7 @@ export function AuthNavigator() {
   return (
     <>
       <Tab.Navigator
+        initialRouteName="Collections"
         tabBarPosition={'bottom'}
         screenOptions={({ route }) => ({
           tabBarIcon: ({ focused, color, size }) => {
