@@ -10,7 +10,7 @@ export function PostContainer({ post }) {
 
   return (
     <View
-      className="mx-4 my-4 mb-2  rounded   "
+      className=" rounded   "
       style={{
         backgroundColor: colors.primaryBackground,
         borderColor: colors.borderCard,

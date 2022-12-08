@@ -4,7 +4,7 @@ export const colors = {
   primaryBackground: '#FDFDFD',
   secondBackground: '#FBFBFB',
   text: '#64748B',
-  boxBackground: '#F1F2F6',
+  boxBackground: '#e5e7eb',
   borderCard: '#E4E9F2',
   success: '#2CBE80',
   error: '#A50203',

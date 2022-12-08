@@ -51,7 +51,7 @@ const bloodCell = [
 
 export function CardCollectionList() {
   return (
-    <View className="mx-4 my-4 mb-2  rounded   ">
+    <View className="rounded">
       {bloodCell.map(({ name, description, avatarComponent }, index) => (
         <CardCollectionItem
           key={`item-${index}`}
