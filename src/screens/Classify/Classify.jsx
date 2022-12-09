@@ -1,55 +1,69 @@
-import { View, Text } from 'react-native';
-import React, { useState } from 'react';
+import { View, ScrollView, Dimensions, KeyboardAvoidingView } from 'react-native';
+import React, { useRef, useState } from 'react';
 import { FormStepOne } from 'src/domain/Classify/FormStepOne';
 import { Stepper } from 'src/components/stepper/Stepper';
-import { colors } from 'src/theme/colors';
-import { ProgressSteps, ProgressStep } from 'react-native-progress-steps';
-import { MaterialIcons } from '@expo/vector-icons';
-import { Button } from 'src/components/button/Button';
-import { HText } from 'src/components/h-text/Text';
 import { Layout } from 'src/components/layout/Layout';
-import { HSelect } from 'src/components/h-select/HSelect';
-import { Picker } from '@react-native-picker/picker';
 import { Title } from 'src/components/title/Title';
 import { FormStepThree } from 'src/domain/Classify/FormStepThree';
 import { FormStepTwo } from 'src/domain/Classify/FormStepTwo';
-
+const { width } = Dimensions.get('window');
 export function Classify() {
   const [active, setActive] = useState(0);
-  const parentHandleChange = (e) => {
-    console.log(e.target.value);
+  const scrollRef = useRef(null);
+
+  const onPressNext = () => {
+    setActive((state) => {
+      scrollRef.current.scrollTo({ x: (state + 1) * (width - 32) });
+      return state + 1;
+    });
+  };
+  const onClickStepItem = (key) => {
+    setActive(key);
+    scrollRef.current.scrollTo({ x: key * (width - 32) });
   };
   const content = [
-    <FormStepOne
-      key={0}
-      title="Component 1"
-      label="Imagem da célula"
-      onPressNext={() => setActive(1)}
-    />,
+    <FormStepOne key={0} title="Component 1" label="Imagem da célula" onPressNext={onPressNext} />,
     <FormStepTwo
       key={1}
       title="Component 2"
       label="Informações adicionais"
-      onPressNext={() => setActive(2)}
+      onPressNext={() => onPressNext()}
     />,
     <FormStepThree
       key={2}
       title="Component 3"
       label="Visibilidade"
-      onPressNext={() => setActive(3)}
+      onPressNext={() => onPressNext()}
     />,
   ];
 
-  console.log(active);
   return (
     <Layout className="rounded" contentContainerStyle={{ flex: 1 }}>
       <Title>Classificar</Title>
 
       <Stepper
-        content={content}
+        options={[
+          { label: 'Imagem da célula', key: 0 },
+          { label: 'Informações da célula', key: 1 },
+          { label: 'Visibilidade', key: 2 },
+        ]}
         active={active}
-        onClickStepItem={(key) => setActive(key)}
-      ></Stepper>
+        onClickStepItem={(key) => onClickStepItem(key)}
+      >
+        <View className="mt-2 flex-1 w-full ">
+          <ScrollView
+            horizontal
+            pagingEnabled
+            ref={scrollRef}
+            scrollEnabled={false}
+            showsHorizontalScrollIndicator={false}
+          >
+            {content.map((item) => {
+              return item;
+            })}
+          </ScrollView>
+        </View>
+      </Stepper>
     </Layout>
   );
 }

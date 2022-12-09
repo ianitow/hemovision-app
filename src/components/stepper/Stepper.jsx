@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { TouchableWithoutFeedback, View } from 'react-native';
-
+import { ScrollView, TouchableWithoutFeedback, View } from 'react-native';
+import { MaterialIcons } from '@expo/vector-icons';
 import { colors } from 'src/theme/colors';
 import { HText } from '../h-text/Text';
 
-const drawLine = (index, total) =>
-  index + 1 != total ? <View style={{ height: 1, backgroundColor: 'red' }} /> : null;
+const getTextColor = (key, active) => (Number(key) === Number(active) ? '#FFFFFF' : colors.text);
+const getTextActiveColor = (key, active) =>
+  Number(key) === Number(active) ? colors.primary : colors.text;
 
 export function Stepper({
   content = [],
@@ -13,41 +14,55 @@ export function Stepper({
   backgroundColorInactive = 'transparent',
   active,
   onClickStepItem,
+  children,
+  options,
 }) {
-  const getBackgroundColor = (key) => {
+  const getBackgroundColor = (key, active) => {
     return Number(key) === Number(active) ? backgroundColorActive : backgroundColorInactive;
   };
-
-  const getTextColor = (key) => (Number(key) === Number(active) ? '#FFFFFF' : colors.text);
-  const getTextActiveColor = (key) =>
-    Number(key) === Number(active) ? colors.primary : colors.text;
+  const isDone = (key) => {
+    return key + 1 <= active;
+  };
 
   return (
     <>
       <View className="h-20 ">
         <View className="flex-row justify-between ">
           <View className=" flex flex-row flex-1 justify-between relative">
-            {content.map(({ props, key }, index) => {
-              const { title, label } = props;
+            {options.map(({ label, key }, index) => {
               return (
-                <View className="h-12 w-24  flex-shrink " key={`${key} - ${title} - ${label}`}>
+                <View className="h-12 w-24  flex-shrink " key={`${key} - ${label}`}>
                   <View className="self-center flex-row relative  ">
                     <TouchableWithoutFeedback onPress={() => onClickStepItem(key)}>
                       <View
-                        key={`${title}-${key}-StepIttem`}
+                        key={`${key}-StepIttem`}
                         className="items-center justify-center w-10 h-10 rounded-full  border "
                         style={{
-                          backgroundColor: getBackgroundColor(key),
-                          borderColor: getTextActiveColor(key),
+                          backgroundColor: isDone(key)
+                            ? colors.primary
+                            : getBackgroundColor(key, active),
+                          borderColor: isDone(key)
+                            ? colors.primary
+                            : getTextActiveColor(key, active),
                         }}
                       >
-                        <HText className={`font-bold `} style={{ color: getTextColor(key) }}>
-                          {index + 1}
-                        </HText>
-                        {index + 1 < content.length && (
+                        {isDone(key) ? (
+                          <MaterialIcons name="done" size={24} color="#FFFFFF" />
+                        ) : (
+                          <HText
+                            className={`font-bold `}
+                            style={{ color: getTextColor(key, active) }}
+                          >
+                            {index + 1}
+                          </HText>
+                        )}
+
+                        {index + 1 < options.length && (
                           <View
-                            className="absolute  h-0.5 -right-20 w-14 top-1/2 "
-                            style={{ backgroundColor: colors.boxBackground }}
+                            className="absolute  h-0.5 -right-20 w-14  "
+                            style={{
+                              backgroundColor: isDone(key) ? colors.primary : colors.boxBackground,
+                            }}
                           ></View>
                         )}
                       </View>
@@ -55,7 +70,7 @@ export function Stepper({
                   </View>
                   <HText
                     className="text-center text-xs  h-full"
-                    style={{ color: getTextActiveColor(key) }}
+                    style={{ color: getTextActiveColor(key, active) }}
                   >
                     {label}
                   </HText>
@@ -65,7 +80,7 @@ export function Stepper({
           </View>
         </View>
       </View>
-      <View className="mt-2 flex-1">{content[active]}</View>
+      <>{children}</>
     </>
   );
 }

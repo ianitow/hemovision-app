@@ -1,4 +1,4 @@
-import { View, Text } from 'react-native';
+import { View, Text, Dimensions } from 'react-native';
 import React, { useState } from 'react';
 import { Title } from 'src/components/title/Title';
 import { MaterialIcons } from '@expo/vector-icons';
@@ -6,9 +6,11 @@ import { HText } from 'src/components/h-text/Text';
 import { Picker } from '@react-native-picker/picker';
 import { colors } from 'src/theme/colors';
 import { Button } from 'src/components/button/Button';
+const { width } = Dimensions.get('window');
+
 export function FormStepOne({ onPressNext, onClickClearStep }) {
   return (
-    <View className="flex-1">
+    <View style={{ width: width - 32 }}>
       <View
         className="items-center justify-center h-72  rounded border"
         style={{ borderColor: 'rgba(0,0,0,.10)', backgroundColor: colors.boxBackground }}

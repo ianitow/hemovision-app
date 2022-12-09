@@ -9,7 +9,12 @@ export function Layout({ contentContainerStyle, style = [], children }) {
       className="flex flex-1 mx-4 my-4 mb-2   "
       style={[{ backgroundColor: '#f3f3f3', color: colors.text }, ...style]}
     >
-      <ScrollView contentContainerStyle={contentContainerStyle}>{children}</ScrollView>
+      <ScrollView
+        contentContainerStyle={contentContainerStyle}
+        showsVerticalScrollIndicator={false}
+      >
+        {children}
+      </ScrollView>
     </View>
   );
 }

@@ -8,11 +8,13 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import { colors } from 'src/theme/colors';
 import Constants from 'expo-constants';
 import { Text, View } from 'react-native';
+import { Header } from 'src/components/header/Header';
 const Tab = createMaterialTopTabNavigator();
 
 export function AuthNavigator() {
   return (
     <>
+      <Header />
       <Tab.Navigator
         initialRouteName="Classify"
         tabBarPosition={'bottom'}
@@ -66,7 +68,7 @@ export function AuthNavigator() {
             borderBottomWidth: 2,
             borderBottomColor: colors.primary,
           },
-
+          keyboardHidesTabBar: Platform.OS == 'ios' ? false : true,
           tabBarActiveTintColor: colors.primary,
           tabBarInactiveTintColor: colors.text,
         })}
