@@ -5,7 +5,7 @@ import { Picker } from '@react-native-picker/picker';
 import { colors } from 'src/theme/colors';
 
 export function HSelect({ label, style = [], children }) {
-  const [selectedLanguage, setSelectedLanguage] = useState();
+  const [selectedLanguage, setSelectedLanguage] = useState(null);
   const [isFocused, setIsFocused] = useState();
   function handleFocus() {
     setIsFocused(true);
@@ -16,18 +16,19 @@ export function HSelect({ label, style = [], children }) {
 
   return (
     <View style={[...style]}>
-      <HText className="font-bold mb-1">{label}</HText>
+      {label && <HText className="font-bold mb-1">{label}</HText>}
       <View
         className="border rounded p-0.5 "
         style={{
           backgroundColor: colors.boxBackground,
-          borderColor: isFocused ? colors.primary : colors.boxBackground,
+          borderColor: isFocused ? colors.primary : colors.newBorderColor,
         }}
       >
         <Picker
           style={{
             backgroundColor: colors.boxBackground,
           }}
+          placeholder="Select language"
           mode="dropdown"
           onFocus={handleFocus}
           onBlur={handleBlur}
