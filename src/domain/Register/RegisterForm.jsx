@@ -14,7 +14,7 @@ export function RegisterForm({ navigation }) {
         <HemovisionLogo />
       </View>
 
-      <ScrollView className="mt-48 px-12" centerContent="true">
+      <ScrollView className="mt-48 px-12" centerContent="true" showsVerticalScrollIndicator={false}>
         <Input
           textContentType="emailAddress"
           borderColor="#EF4444"

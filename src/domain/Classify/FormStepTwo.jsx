@@ -14,24 +14,11 @@ import { colors } from 'src/theme/colors';
 import { HSelect } from 'src/components/h-select/HSelect';
 import { Button } from 'src/components/button/Button';
 import { KeyboardAvoidingViewWrapper } from 'src/components/general/KeyboardAvoidingViewWrapper';
+import { HTextArea } from 'src/components/textarea/HTextArea';
 const { width } = Dimensions.get('window');
 export function FormStepTwo({ onPressNext, onPressClear }) {
   const [text, setText] = useState('');
 
-  const descriptionRef = useRef();
-  const keyboardDidHideCallback = () => {
-    descriptionRef.current.blur?.();
-  };
-  useEffect(() => {
-    const keyboardDidHideSubscription = Keyboard.addListener(
-      'keyboardDidHide',
-      keyboardDidHideCallback
-    );
-
-    return () => {
-      keyboardDidHideSubscription?.remove();
-    };
-  }, []);
   return (
     <KeyboardAvoidingViewWrapper
       showsVerticalScrollIndicator={false}
@@ -53,27 +40,7 @@ export function FormStepTwo({ onPressNext, onPressClear }) {
 
         <View className="mt-2 flex-1  h-full flex-grow  ">
           <HText className="font-bold mb-1 ">Descrição (opcional)</HText>
-          <TouchableWithoutFeedback onPress={() => descriptionRef.current.focus()}>
-            <View
-              className=" rounded flex-1 border  border-gray-300  mb-4 p-2  h-44"
-              style={{ backgroundColor: colors.boxBackground }}
-            >
-              <TextInput
-                value={text}
-                ref={(ref) => {
-                  descriptionRef && (descriptionRef.current = ref);
-                }}
-                multiline
-                scrollEnabled={false}
-                onChange={(e) => setText(e)}
-                style={{
-                  color: colors.text,
-                }}
-                editable
-                className="  align-top "
-              />
-            </View>
-          </TouchableWithoutFeedback>
+          <HTextArea />
         </View>
 
         <View className=" justify-end ">

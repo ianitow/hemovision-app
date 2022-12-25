@@ -16,7 +16,7 @@ export function AuthNavigator() {
     <>
       <Header />
       <Tab.Navigator
-        initialRouteName="Classify"
+        initialRouteName="Feed"
         tabBarPosition={'bottom'}
         screenOptions={({ route }) => ({
           tabBarIcon: ({ focused, color, size }) => {

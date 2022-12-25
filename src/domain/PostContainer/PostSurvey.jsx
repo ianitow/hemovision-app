@@ -21,10 +21,7 @@ export function PostSurvey({ overlay = false }) {
   });
   const total = usersOptions.reduce((acc, item) => acc + item.votes, 0);
   return (
-    <View
-      className="flex  h-full border rounded relative "
-      style={{ borderColor: colors.boxBackground }}
-    >
+    <View className="flex  h-full  rounded relative " style={{ borderColor: colors.boxBackground }}>
       <FormSurvey
         artificialOptions={artificialOption}
         usersOptions={usersOptions}

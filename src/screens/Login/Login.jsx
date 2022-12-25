@@ -18,7 +18,7 @@ export const Login = ({ navigation }) => {
     <View style={{ backgroundColor: colors.secondBackground }}>
       <View className="flex h-full items-center justify-center  ">
         <View className="w-full flex px-12   ">
-          <ScrollView>
+          <ScrollView showsVerticalScrollIndicator={false}>
             <View className="justify-center">
               <View className="absolute top-16  self-center">
                 <HemovisionLogo isMinimal={false} />
