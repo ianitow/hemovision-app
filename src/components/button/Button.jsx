@@ -22,13 +22,13 @@ export function Button({
 
   return (
     <TouchableOpacity
-      className="flex-row items-center rounded-md border   px-4 py-2 text-sm  text-white shadow-sm  focus:outline-none focus:ring-offset-2 w-full h-10 font-bold "
+      className="flex-row justify-center items-center rounded-md border   px-4 py-2 text-sm  text-white shadow-sm  focus:outline-none focus:ring-offset-2 w-full h-14 font-bold "
       style={newStyles}
       {...rest}
     >
       {icon && <View className="mr-1">{icon}</View>}
       <Text
-        className="uppercase self-centerborder "
+        className="uppercase  "
         style={[{ color: outlined ? colors.primary : '#FFFFFF' }, ...textStyle]}
       >
         {children}

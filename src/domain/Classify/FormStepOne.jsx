@@ -1,9 +1,7 @@
-import { View, Text, Dimensions } from 'react-native';
-import React, { useState } from 'react';
-import { Title } from 'src/components/title/Title';
+import { View, Dimensions } from 'react-native';
+import React from 'react';
 import { MaterialIcons } from '@expo/vector-icons';
 import { HText } from 'src/components/h-text/Text';
-import { Picker } from '@react-native-picker/picker';
 import { colors } from 'src/theme/colors';
 import { Button } from 'src/components/button/Button';
 const { width } = Dimensions.get('window');
@@ -20,10 +18,10 @@ export function FormStepOne({ onPressNext, onClickClearStep }) {
       </View>
 
       <View className="flex-1  justify-end mb-2">
-        <Button className="mb-2" onPress={onPressNext}>
+        <Button className="mb-2 h-14" onPress={onPressNext}>
           AVANÇAR
         </Button>
-        <Button outlined onClick={onClickClearStep}>
+        <Button className="h-14" outlined onClick={onClickClearStep}>
           Limpar
         </Button>
       </View>

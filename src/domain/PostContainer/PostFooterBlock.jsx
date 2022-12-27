@@ -10,8 +10,8 @@ export function PostFooterBlock({ style }) {
       <HText className="text-xs font-light text-center">
         Classifique para ter acesso completo a publicação.
       </HText>
-      <View className="self-center">
-        <Button className="my-1">Classsificar</Button>
+      <View className="w-36 justify-center items-center self-center mt-1 ">
+        <Button className="my-1 h-10">Classsificar</Button>
       </View>
     </View>
   );
