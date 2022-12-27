@@ -14,6 +14,7 @@
 		96905EF65AED1B983A6B3ABC /* libPods-hemovisionapp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58EEBF8E8E6FB1BC6CAF49B5 /* libPods-hemovisionapp.a */; };
 		B18059E884C0ABDD17F3DC3D /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC715A2D49A985799AEE119 /* ExpoModulesProvider.swift */; };
 		BB2F792D24A3F905000567C9 /* Expo.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB2F792C24A3F905000567C9 /* Expo.plist */; };
+		653543E387194E4BAC2EE15D /* noop-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2303F3FACECB49F09100362E /* noop-file.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		BB2F792C24A3F905000567C9 /* Expo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Expo.plist; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		FAC715A2D49A985799AEE119 /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-hemovisionapp/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
+		2303F3FACECB49F09100362E /* noop-file.swift */ = {isa = PBXFileReference; name = "noop-file.swift"; path = "hemovisionapp/noop-file.swift"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.swift; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB71A68108700A75B9A /* main.m */,
 				AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */,
+				2303F3FACECB49F09100362E /* noop-file.swift */,
 			);
 			name = hemovisionapp;
 			sourceTree = "<group>";
@@ -76,7 +79,7 @@
 			name = Libraries;
 			sourceTree = "<group>";
 		};
-		83CBB9F61A601CBA00E9B192 = {
+		83CBB9F61A601CBA00E9B192 /* PBXGroup */ = {
 			isa = PBXGroup;
 			children = (
 				13B07FAE1A68108700A75B9A /* hemovisionapp */,
@@ -160,7 +163,7 @@
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		83CBB9F71A601CBA00E9B192 /* Project object */ = {
+		83CBB9F71A601CBA00E9B192 = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 1130;
@@ -178,7 +181,7 @@
 				en,
 				Base,
 			);
-			mainGroup = 83CBB9F61A601CBA00E9B192;
+			mainGroup = 83CBB9F61A601CBA00E9B192 /* PBXGroup */;
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -289,6 +292,7 @@
 				13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 				B18059E884C0ABDD17F3DC3D /* ExpoModulesProvider.swift in Sources */,
+				653543E387194E4BAC2EE15D /* noop-file.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,11 +319,13 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.name.hemovisionapp;
-				PRODUCT_NAME = hemovisionapp;
+				PRODUCT_BUNDLE_IDENTIFIER = "br.ufg.inf.hemovision";
+				PRODUCT_NAME = "hemovisionapp";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
+				TARGETED_DEVICE_FAMILY = "1";
+				CODE_SIGN_ENTITLEMENTS = hemovisionapp/hemovisionapp.entitlements;
 			};
 			name = Debug;
 		};
@@ -338,10 +344,12 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.name.hemovisionapp;
-				PRODUCT_NAME = hemovisionapp;
+				PRODUCT_BUNDLE_IDENTIFIER = "br.ufg.inf.hemovision";
+				PRODUCT_NAME = "hemovisionapp";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
+				TARGETED_DEVICE_FAMILY = "1";
+				CODE_SIGN_ENTITLEMENTS = hemovisionapp/hemovisionapp.entitlements;
 			};
 			name = Release;
 		};
@@ -473,5 +481,5 @@
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 83CBB9F71A601CBA00E9B192 /* Project object */;
+	rootObject = 83CBB9F71A601CBA00E9B192;
 }

@@ -1,4 +1,4 @@
-package com.hemovisionapp;
+package br.ufg.inf.hemovision;
 
 import android.os.Build;
 import android.os.Bundle;

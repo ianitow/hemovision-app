@@ -3,6 +3,33 @@
     "name": "hemovision-app",
     "slug": "hemovision-app",
     "version": "1.0.0",
-    "assetBundlePatterns": ["**/*"]
+    "assetBundlePatterns": ["**/*"],
+    "extra": {
+      "eas": {
+        "projectId": "0cb3bcca-f9e3-4612-8c7d-708e846a750a"
+      }
+    },
+    "plugins": [
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "compileSdkVersion": 33,
+            "targetSdkVersion": 33,
+            "buildToolsVersion": "33.0.0"
+          },
+          "ios": {
+            "deploymentTarget": "13.0"
+          }
+        }
+      ],
+      "@notifee/react-native"
+    ],
+    "android": {
+      "package": "br.ufg.inf.hemovision"
+    },
+    "ios": {
+      "bundleIdentifier": "br.ufg.inf.hemovision"
+    }
   }
 }

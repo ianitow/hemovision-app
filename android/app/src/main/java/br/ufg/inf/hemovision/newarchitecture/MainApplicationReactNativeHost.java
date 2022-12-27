@@ -1,4 +1,4 @@
-package com.hemovisionapp.newarchitecture;
+package br.ufg.inf.hemovision.newarchitecture;
 
 import android.app.Application;
 import androidx.annotation.NonNull;
@@ -20,9 +20,9 @@ import com.facebook.react.fabric.EmptyReactNativeConfig;
 import com.facebook.react.fabric.FabricJSIModuleProvider;
 import com.facebook.react.fabric.ReactNativeConfig;
 import com.facebook.react.uimanager.ViewManagerRegistry;
-import com.hemovisionapp.BuildConfig;
-import com.hemovisionapp.newarchitecture.components.MainComponentsRegistry;
-import com.hemovisionapp.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
+import br.ufg.inf.hemovision.BuildConfig;
+import br.ufg.inf.hemovision.newarchitecture.components.MainComponentsRegistry;
+import br.ufg.inf.hemovision.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
 import java.util.ArrayList;
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.hemovisionapp.newarchitecture.components;
+package br.ufg.inf.hemovision.newarchitecture.components;
 
 import com.facebook.jni.HybridData;
 import com.facebook.proguard.annotations.DoNotStrip;
