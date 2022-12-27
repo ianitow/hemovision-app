@@ -1,7 +1,8 @@
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View } from 'react-native';
 import React from 'react';
 import { colors } from 'src/theme/colors';
 import { HText } from 'src/components/h-text/Text';
+import { Button } from 'src/components/button/Button';
 
 export function PostFooterBlock({ style }) {
   return (
@@ -9,13 +10,8 @@ export function PostFooterBlock({ style }) {
       <HText className="text-xs font-light text-center">
         Classifique para ter acesso completo a publicação.
       </HText>
-      <View className="self-center w-auto mt-2  ">
-        <TouchableOpacity
-          className="justify-center items-center rounded-md  bg-transparent  px-4  text-sm  shadow-sm   w-full h-9 font-bold"
-          style={{ backgroundColor: colors.primary }}
-        >
-          <HText className=" text-white text-xs uppercase font-medium">Classificar</HText>
-        </TouchableOpacity>
+      <View className="self-center">
+        <Button className="my-1">Classsificar</Button>
       </View>
     </View>
   );

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Profile } from 'src/screens';
+import { Feed, Classify, Collections, Notifications, Profile } from 'src/screens';
 
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import {} from '@react-navigation/elements';
@@ -15,7 +15,7 @@ export function AuthNavigator() {
     <>
       <Header />
       <Tab.Navigator
-        initialRouteName="Profile"
+        initialRouteName="Feed"
         tabBarPosition={'bottom'}
         screenOptions={({ route }) => ({
           tabBarIcon: ({ focused, color, size }) => {
@@ -72,10 +72,10 @@ export function AuthNavigator() {
           tabBarInactiveTintColor: colors.text,
         })}
       >
-        {/* <Tab.Screen name="Feed" component={Feed} />
+        <Tab.Screen name="Feed" component={Feed} />
         <Tab.Screen name="Collections" component={Collections} />
         <Tab.Screen name="Classify" component={Classify} />
-        <Tab.Screen name="Notifications" component={Notifications} /> */}
+        <Tab.Screen name="Notifications" component={Notifications} />
         <Tab.Screen name="Profile" component={Profile} />
       </Tab.Navigator>
     </>

@@ -8,6 +8,7 @@ export function Button({
   style = [],
   icon = null,
   iconRight = null,
+  textStyle = [],
   ...rest
 }) {
   const newStyles = [
@@ -21,15 +22,19 @@ export function Button({
 
   return (
     <TouchableOpacity
-      className="flex-row justify-center items-center rounded-md border   px-4 py-2 text-sm  text-white shadow-sm  focus:outline-none focus:ring-offset-2 w-full h-14 font-bold"
+      className="flex-row items-center rounded-md border   px-4 py-2 text-sm  text-white shadow-sm  focus:outline-none focus:ring-offset-2 w-full h-10 font-bold "
       style={newStyles}
       {...rest}
     >
-      <View className="mr-1">{icon}</View>
-      <Text className="uppercase" style={{ color: outlined ? colors.primary : '#FFFFFF' }}>
+      {icon && <View className="mr-1">{icon}</View>}
+      <Text
+        className="uppercase self-centerborder "
+        style={[{ color: outlined ? colors.primary : '#FFFFFF' }, ...textStyle]}
+      >
         {children}
       </Text>
-      <View className="ml-1">{iconRight}</View>
+
+      {iconRight && <View className="ml-1">{iconRight}</View>}
     </TouchableOpacity>
   );
 }
