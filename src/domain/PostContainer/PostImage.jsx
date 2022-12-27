@@ -1,9 +1,9 @@
-import { View, Text, ActivityIndicator } from 'react-native';
+import { View, ActivityIndicator } from 'react-native';
 import React from 'react';
 import { colors } from 'src/theme/colors';
 import { Image } from 'react-native';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
 import SwipeLeft from 'src/assets/swipe_left.svg';
+import { HText } from 'src/components/h-text/Text';
 
 export function PostImage({ overlay = false }) {
   return (
@@ -24,10 +24,10 @@ export function PostImage({ overlay = false }) {
           <View className=" ">
             <SwipeLeft className="self-center text-white w-32 h-32 " fill="white" />
           </View>
-          <Text className="text-center text-white text-xl">Arraste para a esquerda</Text>
-          <Text className="text-center text-white font-light mt-2">
+          <HText className="text-center text-white text-xl">Arraste para a esquerda</HText>
+          <HText className="text-center text-white font-light mt-2">
             Para acessar as classificações de outros usuários
-          </Text>
+          </HText>
         </View>
       )}
       <Image

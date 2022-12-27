@@ -1,4 +1,4 @@
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 import React from 'react';
 import { colors } from 'src/theme/colors';
 import { HText } from 'src/components/h-text/Text';
@@ -25,9 +25,9 @@ export function CardCollectionItem({ name, description, style, avatarComponent }
     >
       <View className="items-center justify-center h-full">{avatarComponent}</View>
       <View className="ml-3 flex justify-center h-full w-full flex-shrink">
-        <HText className="font-bold text-black text-base">{name}</HText>
+        <HText className="font-bold  text-base">{name}</HText>
 
-        <HText className="">{description}</HText>
+        <HText className="font-light text-justify">{description}</HText>
       </View>
     </View>
   );

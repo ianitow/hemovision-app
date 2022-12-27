@@ -38,7 +38,7 @@ export function Classify() {
   ];
 
   return (
-    <Layout className="rounded" contentContainerStyle={{ flex: 1 }}>
+    <Layout className="rounded">
       <Title>Classificar</Title>
 
       <Stepper

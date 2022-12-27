@@ -3,6 +3,7 @@ import React from 'react';
 import { Avatar } from 'react-native-elements';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { colors } from 'src/theme/colors';
+import { HText } from 'src/components/h-text/Text';
 export function PostHeader({ user, post }) {
   return (
     <View className="flex flex-row px-4 mt-4">
@@ -17,10 +18,14 @@ export function PostHeader({ user, post }) {
       <View className="ml-2 flex-1">
         <View className="flex-row justify-between ">
           <View className="w-40">
-            <Text className="font-bold " style={{ lineHeight: 16 }}>
+            <HText
+              className="font-medium text-left flex-wrap "
+              style={{ color: colors.textCharcoal }}
+            >
               {user.firstname} {user.lastname}
-            </Text>
-            <Text
+            </HText>
+
+            <HText
               className="font-light "
               style={{
                 marginTop: -2,
@@ -30,10 +35,10 @@ export function PostHeader({ user, post }) {
               }}
             >
               {user.job}
-            </Text>
+            </HText>
             <View className="flex-row gap-x-1 items-center mt-0.5">
               <Ionicons name="ios-time-outline" size={12} />
-              <Text
+              <HText
                 className="font-light"
                 style={{
                   color: colors.text,
@@ -43,7 +48,7 @@ export function PostHeader({ user, post }) {
                 }}
               >
                 {post.created_at}
-              </Text>
+              </HText>
             </View>
           </View>
           <View className="self-center  ">
