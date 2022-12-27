@@ -5,9 +5,11 @@ import { PostFooter } from './PostFooter';
 import { PostFooterBlock } from './PostFooterBlock';
 import { PostContent } from './PostContent';
 import { PostHeader } from './PostHeader';
+
 export function PostContainer({ post }) {
   const { user } = post;
   const [isModalOpened, setIsModalOpened] = useState(false);
+
   return (
     <>
       <View

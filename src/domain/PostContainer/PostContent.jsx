@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { View, Image, StatusBar, Dimensions, Text } from 'react-native';
+import React from 'react';
+import { View, Dimensions } from 'react-native';
 import Swiper from 'react-native-swiper';
 import { PostImage } from './PostImage';
 import { PostSurvey } from './PostSurvey';
