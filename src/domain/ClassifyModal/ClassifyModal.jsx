@@ -1,10 +1,11 @@
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 import React from 'react';
 import { HText } from 'src/components/h-text/Text';
 import { PostImage } from '../PostContainer/PostImage';
 import { HSelect } from 'src/components/h-select/HSelect';
 import { Picker } from '@react-native-picker/picker';
 import { Button } from 'src/components/button/Button';
+import { colors } from 'src/theme/colors';
 export function ClassifyModal() {
   return (
     <View

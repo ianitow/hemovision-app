@@ -1,18 +1,10 @@
 import { View, Modal } from 'react-native';
-import React, { useState } from 'react';
+import React from 'react';
 
-export function HModal({ children }) {
-  const [modalVisible, setModalVisible] = useState(false);
+export function HModal({ visible, children, ...rest }) {
   return (
     <View>
-      <Modal
-        animationType="fade"
-        transparent={true}
-        visible={modalVisible}
-        onRequestClose={() => {
-          setModalVisible(!modalVisible);
-        }}
-      >
+      <Modal animationType="fade" transparent={true} visible={visible} {...rest}>
         <View
           className="flex flex-1 justify-center items-center "
           style={{
