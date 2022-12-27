@@ -1,11 +1,4 @@
-import {
-  View,
-  Text,
-  KeyboardAvoidingView,
-  ScrollView,
-  TouchableWithoutFeedback,
-  Keyboard,
-} from 'react-native';
+import { KeyboardAvoidingView, ScrollView, TouchableWithoutFeedback, Keyboard } from 'react-native';
 import React from 'react';
 
 export function KeyboardAvoidingViewWrapper({

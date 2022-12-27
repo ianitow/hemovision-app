@@ -1,11 +1,5 @@
 import React from 'react';
-import { StatusBar } from 'expo-status-bar';
-import { Text, View, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
-import Logo from 'src/assets/logo.svg';
-import FacebookIcon from 'src/assets/facebook_icon.svg';
-import GoogleIcon from 'src/assets/google_icon.svg';
-import AppleIcon from 'src/assets/apple_icon.svg';
-import { Input } from 'src/components/input';
+import { View, ScrollView } from 'react-native';
 import { HemovisionLogo } from 'src/components/hemovision-logo';
 import { colors } from 'src/theme/colors';
 import { LoginForm } from 'src/domain/';

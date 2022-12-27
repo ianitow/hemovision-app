@@ -1,4 +1,4 @@
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 import React from 'react';
 import { ProgressBar } from '../progress-bar/ProgressBar';
 import { colors } from 'src/theme/colors';

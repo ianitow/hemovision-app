@@ -10,4 +10,5 @@ export const colors = {
   error: '#A50203',
   info: '#85B1E3',
   newBorderColor: '#D1D5DB',
+  textCharcoal: '#222222',
 };

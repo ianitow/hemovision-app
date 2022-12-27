@@ -1,4 +1,4 @@
-import { View, Text, Modal, Pressable } from 'react-native';
+import { View, Modal } from 'react-native';
 import React, { useState } from 'react';
 
 export function HModal({ children }) {

@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { ScrollView, TouchableWithoutFeedback, View } from 'react-native';
+import React from 'react';
+import { TouchableWithoutFeedback, View } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import { colors } from 'src/theme/colors';
 import { HText } from '../h-text/Text';

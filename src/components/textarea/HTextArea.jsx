@@ -1,4 +1,4 @@
-import { View, Text, TouchableWithoutFeedback, TextInput, Keyboard } from 'react-native';
+import { View, TouchableWithoutFeedback, TextInput, Keyboard } from 'react-native';
 import React, { useEffect, useRef, useState } from 'react';
 import { colors } from 'src/theme/colors';
 

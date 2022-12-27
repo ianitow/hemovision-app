@@ -1,4 +1,4 @@
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 import React from 'react';
 import Logo from 'src/assets/logo.svg';
 import LogoMinimal from 'src/assets/logo_minimal.svg';

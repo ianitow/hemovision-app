@@ -1,9 +1,9 @@
-import { View, ScrollView, Dimensions, KeyboardAvoidingView } from 'react-native';
 import React, { useRef, useState } from 'react';
-import { FormStepOne } from 'src/domain/Classify/FormStepOne';
-import { Stepper } from 'src/components/stepper/Stepper';
+import { Dimensions, ScrollView, View } from 'react-native';
 import { Layout } from 'src/components/layout/Layout';
+import { Stepper } from 'src/components/stepper/Stepper';
 import { Title } from 'src/components/title/Title';
+import { FormStepOne } from 'src/domain/Classify/FormStepOne';
 import { FormStepThree } from 'src/domain/Classify/FormStepThree';
 import { FormStepTwo } from 'src/domain/Classify/FormStepTwo';
 const { width } = Dimensions.get('window');

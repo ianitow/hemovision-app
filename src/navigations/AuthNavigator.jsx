@@ -1,13 +1,12 @@
 import React from 'react';
 
-import { Feed, Classify, Collections, Notifications, Profile } from 'src/screens';
+import { Profile } from 'src/screens';
 
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import {} from '@react-navigation/elements';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { colors } from 'src/theme/colors';
-import Constants from 'expo-constants';
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
 import { Header } from 'src/components/header/Header';
 const Tab = createMaterialTopTabNavigator();
 
@@ -16,7 +15,7 @@ export function AuthNavigator() {
     <>
       <Header />
       <Tab.Navigator
-        initialRouteName="Feed"
+        initialRouteName="Profile"
         tabBarPosition={'bottom'}
         screenOptions={({ route }) => ({
           tabBarIcon: ({ focused, color, size }) => {
@@ -73,10 +72,10 @@ export function AuthNavigator() {
           tabBarInactiveTintColor: colors.text,
         })}
       >
-        <Tab.Screen name="Feed" component={Feed} />
+        {/* <Tab.Screen name="Feed" component={Feed} />
         <Tab.Screen name="Collections" component={Collections} />
         <Tab.Screen name="Classify" component={Classify} />
-        <Tab.Screen name="Notifications" component={Notifications} />
+        <Tab.Screen name="Notifications" component={Notifications} /> */}
         <Tab.Screen name="Profile" component={Profile} />
       </Tab.Navigator>
     </>

@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
-import { View, Image, StatusBar, Dimensions, Text } from 'react-native';
-import Swiper from 'react-native-swiper';
+import React from 'react';
+import { Dimensions } from 'react-native';
 import { Layout } from 'src/components/layout/Layout';
 import { Title } from 'src/components/title/Title';
 import { CardCollectionList } from 'src/domain/CardCollection/CardCollectionList';

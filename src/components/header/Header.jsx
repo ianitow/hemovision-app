@@ -1,4 +1,4 @@
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 import React from 'react';
 import { colors } from 'src/theme/colors';
 import { HemovisionLogo } from '../hemovision-logo';

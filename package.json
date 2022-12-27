@@ -58,6 +58,7 @@
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
     "eslint-plugin-react-native": "^4.0.0",
+    "eslint-plugin-unused-imports": "^2.0.0",
     "prettier": "^2.8.0",
     "react-native-svg-transformer": "^1.0.0",
     "tailwind-styled-components": "^2.2.0",

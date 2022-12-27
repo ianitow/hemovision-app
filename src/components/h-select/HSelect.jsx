@@ -1,4 +1,4 @@
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 import React, { useState } from 'react';
 import { HText } from '../h-text/Text';
 import { Picker } from '@react-native-picker/picker';

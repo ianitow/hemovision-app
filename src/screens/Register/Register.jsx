@@ -1,21 +1,8 @@
-import React, { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import {
-  Text,
-  View,
-  TouchableOpacity,
-  StyleSheet,
-  ScrollView,
-  TouchableWithoutFeedback,
-  Keyboard,
-  KeyboardAvoidingView,
-} from 'react-native';
-
-import { Input } from 'src/components/input';
-import { HemovisionLogo } from 'src/components/hemovision-logo';
-import Checkbox from 'expo-checkbox';
-import { colors } from 'src/theme/colors';
+import React from 'react';
+import { Keyboard, TouchableWithoutFeedback, View } from 'react-native';
 import { RegisterForm } from 'src/domain';
+import { colors } from 'src/theme/colors';
 
 export const Register = ({ navigation }) => {
   return (
