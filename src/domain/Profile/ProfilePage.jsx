@@ -10,7 +10,7 @@ import { colors } from 'src/theme/colors';
 import { Button } from 'src/components/button/Button';
 
 export function ProfilePage({ user }) {
-  const isMe = false;
+  const isMe = true;
   const { firstName, lastName, jobDescription, avatar, coverImage, followers, following, resume } =
     user;
   return (
@@ -87,15 +87,16 @@ export function ProfilePage({ user }) {
         >
           <ProfileInfoCount value={followers.length} label="Seguidores" />
           <ProfileInfoCount value={following.length} label="Seguindo" />
+          <ProfileInfoCount value="12" label="Pontuação" />
           <ProfileInfoCount value="14" label="Conquistas" />
         </View>
       </View>
       <View className="px-4 mt-2">
         <HText className="text-lg mb-4">Conquistas</HText>
         <View className="flex-wrap flex-row  justify-center">
-          <ProfileAchievement className="" label="Contribuições" count="+500" />
-          <ProfileAchievement className="ml-auto" label="Contribuições" count="+500" />
-          <ProfileAchievement className="ml-auto" label="Contribuições" count="+500" />
+          <ProfileAchievement className="" label="Contribuições" count="+100" />
+          <ProfileAchievement className="ml-auto" label="Comentários" count="+500" />
+          <ProfileAchievement className="ml-auto" label="Reações" count="+1000" />
           <HText className="w-full text-right mx-auto mt-1 underline">Ver mais</HText>
         </View>
       </View>

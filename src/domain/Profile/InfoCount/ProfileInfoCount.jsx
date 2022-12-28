@@ -1,4 +1,4 @@
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 import React from 'react';
 import { HText } from 'src/components/h-text/Text';
 import { colors } from 'src/theme/colors';
@@ -9,7 +9,7 @@ export function ProfileInfoCount({ value, label }) {
       <HText className="text-lg font-bold " style={{ color: colors.textCharcoal }}>
         {value}
       </HText>
-      <HText className="font-light text-md">{label}</HText>
+      <HText className="font-light text-md text-shrink text-center">{label}</HText>
     </View>
   );
 }
