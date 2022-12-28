@@ -1,6 +1,5 @@
 import { NavigationContainer } from '@react-navigation/native';
-import React, { useCallback, useEffect } from 'react';
-import * as ScreenOrientation from 'expo-screen-orientation';
+import React, { useEffect } from 'react';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { PublicNavigator, AuthNavigator } from 'src/navigations';
 import { lockPortraitMode } from 'src/utils/screen';

@@ -6,7 +6,7 @@ import { HSelect } from 'src/components/h-select/HSelect';
 import { Picker } from '@react-native-picker/picker';
 import { Button } from 'src/components/button/Button';
 import { colors } from 'src/theme/colors';
-export function ClassifyModal() {
+export function ClassifyModal({ onClickClassify }) {
   return (
     <View
       className="w-11/12  bg-blue-200 border rounded px-4 pb-5"
@@ -16,7 +16,7 @@ export function ClassifyModal() {
       }}
     >
       <View>
-        <HText className=" text-center p-2">Classifique a célula abaixo</HText>
+        <HText className=" my-2 text-center p-2">Classifique a célula abaixo</HText>
         <PostImage></PostImage>
         <HSelect className="mt-4">
           <Picker.Item
@@ -30,7 +30,9 @@ export function ClassifyModal() {
           <Picker.Item label="Monócitos" value="monocyte" style={{ color: colors.text }} />
           <Picker.Item label="Não sei" value="i_dont_know" style={{ color: colors.text }} />
         </HSelect>
-        <Button className="mt-4">Publicar</Button>
+        <Button className="mt-4" onPress={onClickClassify}>
+          Classificar
+        </Button>
       </View>
     </View>
   );

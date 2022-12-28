@@ -1,5 +1,5 @@
 import { View } from 'react-native';
-import React, { useState } from 'react';
+import React from 'react';
 import { colors } from 'src/theme/colors';
 import { PostFooter } from './PostFooter';
 import { PostFooterBlock } from './PostFooterBlock';
@@ -7,9 +7,8 @@ import { PostContent } from './PostContent';
 import { PostHeader } from './PostHeader';
 import { HText } from 'src/components/h-text/Text';
 
-export function PostContainer({ post }) {
+export function PostContainer({ post, onClickOpenModal }) {
   const { user } = post;
-  const [isModalOpened, setIsModalOpened] = useState(false);
 
   return (
     <>
@@ -45,7 +44,7 @@ export function PostContainer({ post }) {
             />
           </View>
 
-          <PostFooterBlock className="pt-2" />
+          <PostFooterBlock className="pt-2" onClickOpenModal={() => onClickOpenModal()} />
         </View>
       </View>
     </>
