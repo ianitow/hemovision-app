@@ -25,6 +25,7 @@ export function Feed() {
       <HModal visible={isVisible} onRequestClose={() => setIsVisible(false)}>
         <ClassifyModal onClickClassify={() => setIsVisible(false)} />
       </HModal>
+
       <Layout refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}>
         {mock.map((item) => (
           <PostContainer key={item.id} post={item} onClickOpenModal={() => setIsVisible(true)} />

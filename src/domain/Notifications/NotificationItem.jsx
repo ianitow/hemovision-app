@@ -23,13 +23,11 @@ const NOTIFICATIONS_TYPE = {
   ANALYTICS_POST: 'ANALYTICS_POST',
 };
 
-const makeComment = ({ user }) => {
-  console.log(user);
+const makeComment = (user) => {
   return (
     <HText className="flex-wrap ">
       <HText className="font-bold">
-        {firstName}
-        {lastName}
+        {user.firstName} {user.lastName}
       </HText>
       Fez um <HText className="font-bold">comentário</HText> na publicação de
     </HText>
@@ -148,7 +146,6 @@ const NotificationItem = ({ type = NOTIFICATIONS_TYPE.SYSTEM, ...rest }) => {
       renderComponent: analyticsPost(rest),
     },
   };
-  console.log(properties[type].color);
   return (
     <View
       className="border-b border-r  border-l-4 justify-center flex-row mb-1 flex-grow flex-1 py-4 px-2"

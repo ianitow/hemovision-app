@@ -1,13 +1,9 @@
 import React from 'react';
-import { StatusBar } from 'expo-status-bar';
-import { Text, View, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
-import Logo from 'src/assets/logo.svg';
+import { Text, View, TouchableOpacity } from 'react-native';
 import FacebookIcon from 'src/assets/facebook_icon.svg';
 import GoogleIcon from 'src/assets/google_icon.svg';
 import AppleIcon from 'src/assets/apple_icon.svg';
 import { Input } from 'src/components/input';
-import { HemovisionLogo } from 'src/components/hemovision-logo';
-import { colors } from 'src/theme/colors';
 
 export const LoginForm = ({ navigation }) => {
   const [text, onChangeText] = React.useState('Useless Text');

@@ -19,7 +19,6 @@ export const Input = ({
 
   function handleInputBlur() {
     setIsFocused(false);
-    console.log(value);
     setValue();
   }
 
