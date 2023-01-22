@@ -1,11 +1,13 @@
-import { View } from 'react-native';
+import { TouchableWithoutFeedback, View } from 'react-native';
 import React from 'react';
 import { Ionicons } from '@expo/vector-icons';
 import { Avatar } from 'react-native-elements';
 import { colors } from 'src/theme/colors';
 import { HText } from 'src/components/h-text/Text';
+import { useNavigation } from '@react-navigation/native';
 
 export function PostFooter({ viewedBy, totalVisits = 0, totalComments = 0 }) {
+  const navigation = useNavigation();
   return (
     <View className="flex-row mt-2 justify-between mb-2">
       <View className="flex flex-row">
@@ -15,12 +17,17 @@ export function PostFooter({ viewedBy, totalVisits = 0, totalComments = 0 }) {
             {totalVisits}
           </HText>
         </View>
-        <View className="pl-4 flex flex-row items-center gap-x-1">
-          <Ionicons name="md-chatbox-outline" size={20} color={colors.textCharcoal} />
-          <HText className="" style={{ color: colors.textCharcoal }}>
-            {totalComments}
-          </HText>
-        </View>
+        <TouchableWithoutFeedback
+          className="pl-4 "
+          onPress={() => navigation.navigate({ name: 'CommentModal' })}
+        >
+          <View className="flex flex-row items-center">
+            <Ionicons name="md-chatbox-outline" size={20} color={colors.textCharcoal} />
+            <HText className="" style={{ color: colors.textCharcoal }}>
+              {totalComments}
+            </HText>
+          </View>
+        </TouchableWithoutFeedback>
       </View>
       <View className="flex-row ">
         {viewedBy &&

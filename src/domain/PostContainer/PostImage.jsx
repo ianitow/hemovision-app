@@ -32,7 +32,7 @@ export function PostImage({ overlay = false }) {
       )}
       <Image
         className="h-full w-full rounded"
-        source={{ uri: 'https://o.quizlet.com/pJTq0KYYdDMC20Bsu9Qrgg_b.jpg' }}
+        source={{ uri: `https://picsum.photos/200/300?${Math.random()}` }}
         PlaceholderContent={<ActivityIndicator />}
       ></Image>
     </View>

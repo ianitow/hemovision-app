@@ -1,16 +1,20 @@
 import React from 'react';
 
-import { Feed, Classify, Collections, Notifications, Profile } from 'src/screens';
+import { Classify, Collections, Feed, Notifications, Profile } from 'src/screens';
 
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import {} from '@react-navigation/elements';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { colors } from 'src/theme/colors';
 import { View } from 'react-native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Header } from 'src/components/header/Header';
-const Tab = createMaterialTopTabNavigator();
+import { Comment } from 'src/screens/Comment/Comment';
 
-export function AuthNavigator() {
+const Tab = createMaterialTopTabNavigator();
+const Stack = createNativeStackNavigator();
+
+export function DefaultBottomTabs() {
   return (
     <>
       <Header />
@@ -78,6 +82,26 @@ export function AuthNavigator() {
         <Tab.Screen name="Notifications" component={Notifications} />
         <Tab.Screen name="Profile" component={Profile} />
       </Tab.Navigator>
+    </>
+  );
+}
+
+export function AuthNavigator() {
+  return (
+    <>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="DefaultBottomTabs" component={DefaultBottomTabs} />
+
+        <Stack.Group screenOptions={{ headerShown: true }}>
+          <Stack.Screen
+            name="CommentModal"
+            component={Comment}
+            options={{
+              animation: 'slide_from_bottom',
+            }}
+          />
+        </Stack.Group>
+      </Stack.Navigator>
     </>
   );
 }
